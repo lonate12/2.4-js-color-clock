@@ -38,7 +38,7 @@ function insertTime(){
   };
 
   line.style.width = percentage + '%';
-  body.backgroundColor = '#' + hexNumber;
+  body.style.backgroundColor = '#' + hexNumber;
   console.log(seconds);
 
 }
