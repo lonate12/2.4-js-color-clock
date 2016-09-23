@@ -1,6 +1,24 @@
 (function(){
 "use strict";
 var wholeDate = new (Date)();
+var run;
+var clock = document.getElementById('clock');
+var line = document.getElementById('line');
+var body = document.body;
+
+function start(){
+  run = window.setInterval(insertTime, 1000);
+}
+
+var isHovering = false;
+
+clock.addEventListener('mouseover', function(){
+  isHovering = true;
+});
+
+clock.addEventListener('mouseout', function(){
+  isHovering = false;
+});
 
 function insertTime(){
   var wholeDate = new (Date)();
@@ -13,16 +31,18 @@ function insertTime(){
   var percentage = ((seconds / 60) * 100).toFixed();
   var hexNumber = hours.toString(16) + minutes.toString(16) + seconds.toString(16);
 
-  document.getElementById('clock').innerHTML = displayTime;
-  document.getElementById('line').style.width = percentage + '%';
-  document.body.style.backgroundColor = '#' + hexNumber;
-  document.getElementById('clock').addEventListener("mouseover", function(){
-    this.innerHTML = '#' + hexNumber;
-  });
-  console.log(hexHours);
+  if(isHovering == true) {
+    clock.innerHTML = '#' + hexNumber;
+  } else {
+    clock.innerHTML = displayTime;
+  };
+
+  line.style.width = percentage + '%';
+  body.backgroundColor = '#' + hexNumber;
+  console.log(seconds);
 
 }
-
 insertTime();
-window.setInterval(insertTime, 1000);
+start();
+// run();
 }());
