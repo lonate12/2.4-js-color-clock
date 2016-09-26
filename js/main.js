@@ -31,11 +31,11 @@ function insertTime(){
   var percentage = ((seconds / 60) * 100).toFixed();
   var hexNumber = hours.toString(16) + minutes.toString(16) + seconds.toString(16);
 
-  if(isHovering == true) {
+  if(isHovering === true) {
     clock.innerHTML = '#' + hexNumber;
   } else {
     clock.innerHTML = displayTime;
-  };
+  }
 
   line.style.width = percentage + '%';
   body.style.backgroundColor = '#' + hexNumber;
