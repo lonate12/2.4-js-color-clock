@@ -39,7 +39,6 @@ function insertTime(){
 
   line.style.width = percentage + '%';
   body.style.backgroundColor = '#' + hexNumber;
-  console.log(seconds);
 
 }
 insertTime();
