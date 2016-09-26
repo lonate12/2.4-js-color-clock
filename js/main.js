@@ -7,7 +7,7 @@ var line = document.getElementById('line');
 var body = document.body;
 
 function start(){
-  run = window.setInterval(insertTime, 1000);
+  run = window.setInterval(insertTime, 100);
 }
 
 var isHovering = false;
